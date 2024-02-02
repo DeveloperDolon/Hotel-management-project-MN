@@ -1,5 +1,6 @@
 import NavBar from "../components/NavBar";
 import bannerImg from "../assets/banner-img.png";
+import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
     return (
@@ -13,7 +14,7 @@ const MainLayout = () => {
 
 
             <section>
-                
+                <Outlet></Outlet>
             </section>
         </div>
     );

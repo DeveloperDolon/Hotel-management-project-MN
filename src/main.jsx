@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import MainLayout from './Layout/MainLayout.jsx'
+import { RouterProvider } from 'react-router-dom';
+import { MainRouter } from './router/MainRouter.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <MainLayout></MainLayout>
-  </React.StrictMode>,
+    <RouterProvider router={MainRouter}></RouterProvider>
+  </React.StrictMode>
 )
