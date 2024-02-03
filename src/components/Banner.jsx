@@ -9,7 +9,7 @@ const Banner = () => {
                 background: `url("${bannerImg}")`
             }}>
                 <div className="overlay"></div>
-
+                
                 <NavBar></NavBar>
 
                 <div className="max-w-7xl mx-auto relative h-[calc(100vh-116px)] grid md:grid-cols-2 grid-cols-1 items-center lg:px-0 md:px-5 sm:px-3 px-2">
@@ -19,7 +19,7 @@ const Banner = () => {
                     </h1>
 
                     <div>
-
+                        
                     </div>
                 </div>
             </div>
