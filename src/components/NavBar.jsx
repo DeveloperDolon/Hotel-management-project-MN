@@ -1,23 +1,27 @@
 import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
+import {openCloseFunc} from "../redux/features/toggleBar/toggleBarSlice.js";
+import {useSelector, useDispatch} from "react-redux";
 
 const NavBar = () => {
-
     const navItems = <>
-        <li>
+        <li className="hover:bg-gray-200">
             <NavLink to={"/package"}>Package</NavLink>
         </li>
-        <li>
+        <li className="hover:bg-gray-200">
             <NavLink to={"/dining"}>Dining</NavLink>
         </li>
-        <li>
+        <li className="hover:bg-gray-200">
             <NavLink to={"/gallery"}>Gallery</NavLink>
         </li>
-        <li>
+        <li className="hover:bg-gray-200">
             <NavLink to={"/contact-us"}>Contact Us </NavLink>
         </li>
-    </>
+    </>;
+
+    const {isOpen} = useSelector((state) => state.isOpen);
+    const dispatch = useDispatch();
 
     return (
         <div className="bg-none z-30 relative lg:px-0 md:px-5 sm:px-3 px-2 max-w-7xl mx-auto">
@@ -26,11 +30,11 @@ const NavBar = () => {
                     <img className="md:w-32 w-20 border-2 rounded-lg border-white p-2 bg-[#0210267F]" src={logo} alt="" />
                 </div>
 
-                <div className="text-white sm:text-3xl text-xl md:hidden block">
-                    <button><FaBars></FaBars></button>
+                <div className="text-white sm:text-3xl text-xl md:hidden block relative">
+                    <button onClick={() => dispatch(openCloseFunc())}><FaBars></FaBars></button>
 
-                    <div className="sm:text-base text-sm bg-white p-6 rounded-lg text-black">
-                        <ul className="list-none space-y-2">
+                    <div className={`sm:text-base absolute overflow-hidden sm:top-8 top-6 right-1 text-sm bg-white p-6 rounded-lg text-black duration-300 transition-all ${isOpen ? "h-auto w-auto p-6" : "h-0 w-0 p-0"}`}>
+                        <ul className="list-none space-y-2 text-nowrap">
                             {navItems}
                         </ul>
                     </div>

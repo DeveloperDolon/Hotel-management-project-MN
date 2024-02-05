@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import tasksReducer from "./features/tasks/tasksSlice.js";
+import toggleBarReducer from "./features/toggleBar/toggleBarSlice.js";
 
 export const store = configureStore({
     reducer: {
-        tasksSlice: tasksReducer
-    }
+        isOpen: toggleBarReducer,
+    }   
 });
 
