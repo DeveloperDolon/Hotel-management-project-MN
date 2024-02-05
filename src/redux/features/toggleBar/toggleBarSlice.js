@@ -14,10 +14,13 @@ const tasksSlice = createSlice({
             } else {
                 state.isOpen = true;
             }
+        },
+        openCloseWithValue: (state, condition) => {
+            state.isOpen = condition.payload;
         }
     }
 });
 
-export const {openCloseFunc} = tasksSlice.actions;
+export const {openCloseFunc, openCloseWithValue} = tasksSlice.actions;
 
 export default tasksSlice.reducer;

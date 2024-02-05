@@ -1,8 +1,8 @@
 import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import {openCloseFunc} from "../redux/features/toggleBar/toggleBarSlice.js";
-import {useSelector, useDispatch} from "react-redux";
+import { openCloseFunc } from "../redux/features/toggleBar/toggleBarSlice.js";
+import { useSelector, useDispatch } from "react-redux";
 
 const NavBar = () => {
     const navItems = <>
@@ -20,7 +20,7 @@ const NavBar = () => {
         </li>
     </>;
 
-    const {isOpen} = useSelector((state) => state.isOpen);
+    const { isOpen } = useSelector((state) => state.isOpen);
     const dispatch = useDispatch();
 
     return (
@@ -30,11 +30,13 @@ const NavBar = () => {
                     <img className="md:w-32 w-20 border-2 rounded-lg border-white p-2 bg-[#0210267F]" src={logo} alt="" />
                 </div>
 
-                <div className="text-white sm:text-3xl text-xl md:hidden block relative">
-                    <button onClick={() => dispatch(openCloseFunc())}><FaBars></FaBars></button>
+                <div className="text-white sm:text-3xl text-xl md:hidden flex items-center relative">
+                    <button className="md:px-3 px-2 font-medium rounded-lg md:py-[7px] md:text-base sm:text-sm text-xs py-1 bg-blue-500 text-white">Login</button>
 
-                    <div className={`sm:text-base absolute overflow-hidden sm:top-8 top-6 right-1 text-sm bg-white p-6 rounded-lg text-black duration-300 transition-all ${isOpen ? "h-auto w-auto p-6" : "h-0 w-0 p-0"}`}>
-                        <ul className="list-none space-y-2 text-nowrap">
+                    <button className="ml-3" onClick={() => dispatch(openCloseFunc())}><FaBars></FaBars></button>
+
+                    <div className={`sm:text-base absolute overflow-hidden sm:top-8 top-6 right-1 text-sm bg-white rounded-lg text-black duration-300 transition-all ${isOpen ? "h-auto w-auto p-6" : "h-0 w-0 p-0"}`}>
+                        <ul className="list-none space-y-2 text-nowrap font-medium">
                             {navItems}
                         </ul>
                     </div>
