@@ -1,12 +1,12 @@
 import Banner from "../components/Banner";
-import Counter from "../components/Counter";
+import RoomsSection from "../components/RoomsSection";
 
 const Home = () => {
 
     return (
         <div>
             <Banner></Banner>
-            <Counter></Counter>
+            <RoomsSection></RoomsSection>
         </div>
     );
 };

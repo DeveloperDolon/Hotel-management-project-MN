@@ -31,7 +31,7 @@ const NavBar = () => {
                 </div>
 
                 <div className="text-white sm:text-3xl text-xl md:hidden flex items-center relative">
-                    <button className="md:px-3 px-2 font-medium rounded-lg md:py-[7px] md:text-base sm:text-sm text-xs py-1 bg-blue-500 text-white">Login</button>
+                <NavLink to={"/login"} className="md:px-3 px-2 font-medium rounded-lg md:py-[7px] md:text-base sm:text-sm text-xs py-1 bg-blue-500 text-white">Login</NavLink>
 
                     <button className="ml-3" onClick={() => dispatch(openCloseFunc())}><FaBars></FaBars></button>
 
@@ -46,7 +46,7 @@ const NavBar = () => {
                     {/* <li><NavLink>Find Room</NavLink></li> */}
                     {navItems}
                     <li className="ml-4">
-                        <button className="md:px-3 px-2 font-medium rounded-lg md:py-[7px] md:text-base sm:text-sm text-xs py-1 bg-blue-500 text-white">Login</button>
+                        <NavLink to={"/login"} className="md:px-3 px-2 font-medium rounded-lg md:py-[7px] md:text-base sm:text-sm text-xs py-1 bg-blue-500 text-white">Login</NavLink>
                     </li>
                 </ul>
             </nav>

@@ -8,9 +8,12 @@ const Banner = () => {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
       } = useForm();
+
+      const onSubmit = (e) =>{
+        console.log(e)
+      }
 
     return (
         <div className="">
@@ -28,35 +31,41 @@ const Banner = () => {
                     </h1>
 
                     <div className="md:w-[400px] w-full overflow-hidden mx-auto md:mt-0 sm:mt-10 mt-6">
-                        <form style={{  boxShadow: "inset 0px .5px 20px 0px rgba(255, 255, 255, 1)"}} className="backdrop-blur-sm rounded-xl shadow-white py-5 px-6 space-y-5">
+                        <form onSubmit={handleSubmit(onSubmit)} style={{  boxShadow: "inset 0px .5px 20px 0px rgba(255, 255, 255, 1)"}} className="backdrop-blur-sm rounded-xl shadow-white py-5 px-6 space-y-5">
                             <div>
                                 <label htmlFor=""> <span className="pb-1 block text-white">Find a room</span>
-                                    <select {...register("room-name", { required: true })} className="w-full md:text-base text-sm md:py-3 py-2 md:px-5 px-3 bg-white rounded-lg" name="rooms-select" id="">
+                                    <select {...register("room_name", { required: true })} className="w-full md:text-base text-sm md:py-3 py-2 md:px-5 px-3 bg-white rounded-lg" name="rooms-select" id="">
                                         <option value=""></option>
                                         <option value=""></option>
                                         <option value=""></option>
                                     </select>
+                                    {errors.room_name && <span className="md:text-sm text-xs text-red-500">This field is required</span>}
                                 </label>
                             </div>
 
                             <div className="flex justify-between gap-5">
-                                <label htmlFor=""><span className="pb-1 block text-white">Check In</span>
-                                    <input {...register("check-in", { required: true })} className="md:text-base text-sm md:py-3 py-2 bg-white md:px-3 px-2 rounded-lg" type="date" name="check-in" id="" />
+                                <label htmlFor=""><span className="pb-1 block text-white md:text-sm text-xs">Check In</span>
+                                    <input {...register("check_in", { required: true })} className="md:text-base text-sm md:py-3 py-2 bg-white md:px-3 px-2 rounded-lg" type="date" name="check-in" id="" />
+                                    <br />
+                                    {errors.check_in && <span className=" text-red-500 md:text-sm text-xs">This field is required</span>}
                                 </label>
-                                <label htmlFor=""><span className="pb-1 block text-white">Check Out</span>
-                                    <input className="md:text-base text-sm md:py-3 py-2 md:px-3 px-2 bg-white rounded-lg" {...register("check-out", { required: true })} type="date" name="check-out" id="" />
+                                <label htmlFor=""><span className="pb-1 block text-white md:text-sm text-xs">Check Out</span>
+                                    <input className="md:text-base text-sm md:py-3 py-2 md:px-3 px-2 bg-white rounded-lg" {...register("check_out", { required: true })} type="date" name="check-out" id="" />
+                                    <br />
+                                    {errors.check_out && <span className="md:text-sm text-xs text-red-500">This field is required</span>}
                                 </label>
                             </div>
 
                             <div>
                                 <label htmlFor="">
-                                    <select className="md:text-base text-sm md:py-3 py-2 bg-white w-full md:px-5 px-3 rounded-lg" {...register("guest count", { required: true })} name="guest-count" id="">
+                                    <select className="md:text-base text-sm md:py-3 py-2 bg-white w-full md:px-5 px-3 rounded-lg" {...register("guest_count", { required: true })} name="guest-count" id="">
                                         <option value=""></option>
                                         <option value=""></option>
                                         <option value=""></option>
                                         <option value=""></option>
                                         <option value=""></option>
                                     </select>
+                                    {errors.guest_count && <span className=" md:text-sm text-xs text-red-500">This field is required</span>}
                                 </label>
                             </div>
 
