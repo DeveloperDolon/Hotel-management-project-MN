@@ -43,6 +43,8 @@ const Banner = () => {
                                 </label>
                             </div>
 
+                            
+
                             <div className="flex justify-between gap-5">
                                 <label htmlFor=""><span className="pb-1 block text-white md:text-sm text-xs">Check In</span>
                                     <input {...register("check_in", { required: true })} className="md:text-base text-sm md:py-3 py-2 bg-white md:px-3 px-2 rounded-lg" type="date" name="check-in" id="" />
@@ -70,7 +72,7 @@ const Banner = () => {
                             </div>
 
                             <div>
-                                <label id="check-box" className="text-white md:text-base text-sm font-light flex items-center" htmlFor="">
+                                <label id="check-box-container" className="text-white md:text-base text-sm font-light flex items-center" htmlFor="">
                                     <input type="checkbox" className="mr-3 md:w-5 w-3 md:h-5 h-3 accent-[#FDC463]" />
                                     Pay when check in?
                                 </label>

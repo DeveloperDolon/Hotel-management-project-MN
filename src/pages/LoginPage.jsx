@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+import "./style.css"
 
 const LoginPage = () => {
 
     return (
         <div className="flex items-center justify-center min-h-screen lg:px-0 md:px-5 sm:px-3 px-2 bg-[#F1F2F4]">
-            <div className="max-w-2xl block mx-auto flex-1 md:p-8 rounded-lg shadow-slate-100 shadow-lg  p-5 bg-white">
+            <div className="max-w-2xl block mx-auto flex-1 md:p-8 rounded-lg shadow-slate-100 shadow-lg  p-5 md:pb-4 pb-3 bg-white my-20">
 
                 <div className="flex justify-center items-center">
-                    <h1 className="md:text-3xl text-xl font-bold border-b-2 border-black py-3">Login With</h1>
+                    <h1 className="md:text-3xl text-xl font-bold border-b-2 border-black py-3 pt-1">Login With</h1>
                 </div>
 
                 <div>
@@ -36,14 +38,30 @@ const LoginPage = () => {
                 </div>
 
                 <form className="mt-5">
-                    <label htmlFor=""> <span className="md:text-base text-sm font-bold">Email*</span> <br />
-                        <input className="w-full border md:py-3 py-2 md:px-4 px-3 rounded-lg" type="email" name="" id="" placeholder="Email" />
+                    <label htmlFor=""> <span className="md:text-base text-sm font-medium block pb-1">Email*</span>
+                        <input className="w-full border md:py-3 py-2 md:px-4 px-3 rounded-lg md:text-base text-sm" type="email" name="" id="" placeholder="Email" />
                     </label>
                     <br />
-                    <label className="block mt-6" htmlFor=""> <span className="md:text-base text-sm font-bold">Password*</span><br />
-                        <input className="w-full border md:py-3 py-2 md:px-4 px-3 rounded-lg" placeholder="Type your password" type="password" />
+                    <label className="block mt-6" htmlFor=""> <span className="md:text-base text-sm font-medium block pb-1">Password*</span>
+                        <input className="w-full border md:py-3 py-2 md:px-4 px-3 rounded-lg md:text-base text-sm" placeholder="Type your password" type="password" />
                     </label>
+
+                    <div className="flex justify-between items-center py-4 px-3">
+                        <label htmlFor="" className="md:text-sm text-xs flex items-center gap-2" id="remembr-check" >
+                            <input className="accent-[#F15614] md:w-5 md:h-5 w-4 h-4" type="checkbox" name="" id="" /> Remember me.
+                        </label>
+
+                        <a className="block md:text-sm text-xs underline font-medium">
+                            Forget password?
+                        </a>
+                    </div>
+
+                    <button className="block w-full bg-[#F15614] md:text-xl md:mt-5 mt-3 sm:text-lg text-base font-semibold text-white py-2 rounded-lg">Login</button>
                 </form>
+
+                <div>
+                    <p className="md:text-lg text-base text-center py-2 mt-4">Not a member? <Link className="text-blue-400">Sing Up Now</Link></p>
+                </div>
 
             </div>
         </div>
